@@ -23,7 +23,25 @@ public class ceasercipher{
             temp+=c;
             result+=(char) (temp);
         }
-        System.out.println(result);
+        System.out.println("Ciphered Text: "+result);
+        text="";
+        for (int i = 0; i < result.length(); i++) {
+            int c='a';
+            char p = result.charAt(i);
+            if(p==' '){
+                text+=p;
+                continue;
+            }
+            if(Character.isUpperCase(p)){
+                c='A';
+            }
+            int temp=p-c;
+            temp-=key;
+            temp%=26;
+            temp+=c;
+            text+=(char) (temp);
+        }
+        System.out.println("Decrypted Text: "+text);
         sc.close();
     }
 }
