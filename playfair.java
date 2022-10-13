@@ -1,6 +1,6 @@
-import java.util.Scanner;
-import java.util.HashMap;
-import java.util.Map;
+// import java.util.Scanner;
+// import java.util.HashMap;
+import java.util.*;
 
 public class playfair {
     static char[][] Table = new char[5][5];
