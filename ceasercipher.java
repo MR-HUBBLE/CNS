@@ -52,4 +52,4 @@ public class ceasercipher{
         sc.close();
     }
 }
-}
+
