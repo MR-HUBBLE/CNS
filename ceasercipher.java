@@ -25,9 +25,6 @@ public class ceasercipher{
         }
         System.out.println(result);
         text="";
-        for (int i = 0; i < result.length(); i++) {
-            char p = result.charAt(i);
-            int c='a';
         System.out.println("Ciphered Text: "+result);
         text="";
         for (int i = 0; i < result.length(); i++) {
