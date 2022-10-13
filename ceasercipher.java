@@ -28,6 +28,12 @@ public class ceasercipher{
         for (int i = 0; i < result.length(); i++) {
             char p = result.charAt(i);
             int c='a';
+        System.out.println("Ciphered Text: "+result);
+        text="";
+        for (int i = 0; i < result.length(); i++) {
+            int c='a';
+            char p = result.charAt(i);
+
             if(p==' '){
                 text+=p;
                 continue;
@@ -41,7 +47,12 @@ public class ceasercipher{
             temp+=c;
             text+=(char) (temp);
         }
+
         System.out.println(text);
+
+        System.out.println("Decrypted Text: "+text);
+
         sc.close();
     }
+}
 }
