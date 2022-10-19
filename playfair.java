@@ -1,5 +1,3 @@
-// import java.util.Scanner;
-// import java.util.HashMap;
 import java.util.*;
 
 public class playfair {
@@ -14,9 +12,7 @@ public class playfair {
         System.out.print("Enter the Plain text: ");
         text = sc.nextLine();
         diagram();
-        printarr();
         text();
-        // System.out.println(text);
         encrypt();
     }
     public static void diagram() {
@@ -34,6 +30,8 @@ public class playfair {
                 map.put(c++, temp);
             }
         }
+        System.out.println("The Diagram : ");
+        printarr();
     }
 
     public static void text() {
@@ -42,6 +40,7 @@ public class playfair {
                 text = text.substring(0, i + 1) + 'x' + text.substring(i + 1);
         }
         if (text.length() % 2 != 0) text += 'x';
+        System.out.println("Plain text: "+text);
     }
 
     public static void encrypt() {
@@ -54,12 +53,10 @@ public class playfair {
             int brow = map.get(b)[0], bcol = map.get(b)[1];
             if (arow == brow) {
                 acol++; bcol++;
-                if (acol > 4) acol = 0;
-                if (bcol > 4) bcol = 0;
+                acol%=5;bcol%=5;
             } else if (acol == bcol) {
                 arow++; brow++;
-                if (arow > 4) arow = 0;
-                if (brow > 4) brow = 0;
+                arow%=5;brow%=5;
             } else {
                 int temp = acol;
                 acol = bcol;
@@ -70,22 +67,15 @@ public class playfair {
         }
         System.out.println("Ciphered text: " + Cipher_text);
     }
-
-    public static void printmap() {
-        char m = 'a';
-        for (int i = 0; i < 26; i++) {
-            if (m != 'j')
-                System.out.println(m + "->" + map.get(m)[0] + " " + map.get(m)[1]);
-            m++;
-        }
-    }
-
     public static void printarr() {
         for (int i = 0; i < Table.length; i++) {
+            System.out.println(" --- --- --- --- ---");
+            System.out.print("|");
             for (int j = 0; j < Table[0].length; j++) {
-                System.out.print(Table[i][j] + " ");
+                System.out.print(" "+Table[i][j] + " |");
             }
             System.out.println();
         }
+        System.out.println(" --- --- --- --- ---");
     }
 }
